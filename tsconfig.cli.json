@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "isolatedModules": false,
+    "module": "commonjs",
+    "noEmit": false,
+    "paths": {
+      "src": [
+        "./src"
+      ]
+    },
+    "target": "ES3"
+  },
+  "include": [
+    "./cli.ts"
+  ]
+}

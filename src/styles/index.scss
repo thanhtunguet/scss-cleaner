@@ -1,0 +1,17 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~antd/dist/antd.min.css";
+@import "~codemirror/lib/codemirror.css";
+@import "~codemirror/theme/monokai.css";
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.CodeMirror {
+  height: 500px;
+}
+
+.textarea {
+  height: 500px!important;
+}

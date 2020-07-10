@@ -1,12 +1,13 @@
-import {appService} from './src/views/App.service';
+#!/usr/bin/env node
+
+import {appService} from 'views/App.service';
 import fs, {BaseEncodingOptions} from 'fs';
 import path from 'path';
+import command from 'commander';
 
 const baseEncodingOptions: BaseEncodingOptions = {
   encoding: 'utf-8',
 };
-
-let i = 0;
 
 function cleanCode(entryPath: string) {
   if (fs.existsSync(entryPath)) {
@@ -31,11 +32,16 @@ function cleanCode(entryPath: string) {
         const usedClasses: Record<string, string> = appService.getUsedClasses(tsxCode);
         const newScss: string = appService.removeUnusedMixins(appService.clean(scssCode, usedClasses));
         fs.writeFileSync(scssPath, newScss);
-        i++;
       }
     }
   }
 }
 
-cleanCode(path.resolve('..', 'vanilla-dms-app', 'src'));
-console.log('%d files modified', i);
+command
+  .command('clean <path>')
+  .description('Clean scss for a specific project root folder')
+  .action((directory: string) => {
+    cleanCode(path.join(directory, 'src'));
+  });
+
+command.parse(process.argv);

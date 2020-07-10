@@ -1,18 +1,22 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src",
     "isolatedModules": false,
     "module": "commonjs",
     "noEmit": false,
+    "outDir": "dist",
     "paths": {
       "src": [
         "./src"
+      ],
+      "views": [
+        "./src/views/"
       ]
     },
     "target": "ES3"
   },
   "include": [
-    "./cli.ts"
+    "./src/cli.ts"
   ]
 }

@@ -30,3 +30,4 @@ src/**/*.js.map
 
 .idea/
 dist/
+.firebase/

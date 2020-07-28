@@ -1,9 +1,10 @@
 {
   "name": "scss-cleaner",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "private": false,
-  "main": "src/cli.js",
-  "module": "src/cli.js",
+  "main": "./cli.js",
+  "module": "./cli.js",
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -19,7 +20,7 @@
     "extends": "react-app"
   },
   "bin": {
-    "scss-clean": "src/cli.js"
+    "scss-clean": "./cli.js"
   },
   "browserslist": {
     "production": [

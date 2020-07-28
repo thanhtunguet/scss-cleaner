@@ -1,7 +1,7 @@
 import {EditorConfiguration} from 'codemirror';
 import {Node, parse, stringify} from 'scss-parser';
 
-export const STYLE_USAGE_REGEX: RegExp = /styles((\.([A-z0-9]+))|(\['([A-z0-9-]+)']))/gm;
+export const STYLE_USAGE_REGEX: RegExp = /styles((\.([_a-zA-Z0-9]+))|(\['([_\-a-zA-Z0-9]+)'\]))/gm;
 
 export const MIXIN_USAGE_REGEX: RegExp = /@include ([A-z0-9-]+)/gm;
 

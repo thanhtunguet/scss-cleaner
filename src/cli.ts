@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import {appService} from './views/App.service';
-import fs, {BaseEncodingOptions} from 'fs';
-import path from 'path';
 import command from 'commander';
+import fs, { BaseEncodingOptions } from 'fs';
+import path from 'path';
+import { appService } from './views/App.service';
 
 const baseEncodingOptions: BaseEncodingOptions = {
   encoding: 'utf-8',
@@ -44,10 +44,10 @@ function cleanCode(entryPath: string) {
 }
 
 command
-  .command('clean <path>')
+  .command('clean')
   .description('Clean scss for a specific project root folder')
-  .action((directory: string) => {
-    cleanCode(path.join(directory, 'src'));
+  .action(() => {
+    cleanCode(path.join(process.cwd(), 'src'));
   });
 
 command.parse(process.argv);

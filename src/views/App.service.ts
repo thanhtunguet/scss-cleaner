@@ -5,8 +5,25 @@ export const STYLE_USAGE_REGEX: RegExp = /styles((\.([_a-zA-Z0-9]+))|(\['([_\-a-
 
 export const MIXIN_USAGE_REGEX: RegExp = /@include ([A-z0-9-]+)/gm;
 
+export interface AppService {
+  getCodeMirrorOption(mode: string): EditorConfiguration;
 
-export const appService = {
+  clean(scss: string, usedClasses: Record<string, string>): string;
+
+  getNumLineOfCodeRemoved(oldScss: string, newScss: string): number;
+  
+  formatRuleSpacing(scss: string): string;
+
+  getMixinDeclarations(scss: string, keyword?: string, type?: string): Record<string, string>;
+
+  removeUnusedMixins(scss: string): string;
+
+  getUsedClasses(tsx: string): Record<string, string>;
+
+  flatten(rootNode: Node): Node[];
+}
+
+export const appService: AppService = {
   getCodeMirrorOption(mode: string): EditorConfiguration {
     return {
       mode,

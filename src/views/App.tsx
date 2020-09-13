@@ -7,9 +7,10 @@ import {appService} from 'views/App.service';
 import 'codemirror/mode/sass/sass';
 import 'codemirror/mode/jsx/jsx';
 import {message} from 'antd';
+import { EditorConfiguration } from 'codemirror';
 
-const scssOptions = appService.getCodeMirrorOption('sass');
-const tsxOptions = appService.getCodeMirrorOption('jsx');
+const scssOptions: EditorConfiguration = appService.getCodeMirrorOption('sass');
+const tsxOptions: EditorConfiguration = appService.getCodeMirrorOption('jsx');
 
 function App() {
   const [scss, setScss] = React.useState<string>('');

@@ -5,6 +5,7 @@
   "main": "./cli.js",
   "module": "./cli.js",
   "license": "MIT",
+  "homepage": "https://thanhtunguet.info/scss-cleaner",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

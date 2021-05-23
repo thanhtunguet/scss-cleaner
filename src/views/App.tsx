@@ -1,5 +1,5 @@
 import React from 'react';
-import 'views/App.scss';
+import 'src/views/App.scss';
 import Button from 'antd/lib/button';
 import {Col, Row} from 'antd/lib/grid';
 import {Controlled as CodeMirror} from 'react-codemirror2';
